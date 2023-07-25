@@ -3,8 +3,6 @@ import { obtenerPersonas } from '../Firebase/Promesas'
 import { Persona } from '../Interfaces/IFormulario'
 import { Link } from 'react-router-dom'
 
-
-
 export const Registros = () => {
     const [personas, setPersonas] = useState<Persona[]>([])
     useEffect(()=>{
