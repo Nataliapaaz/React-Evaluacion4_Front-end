@@ -1,17 +1,21 @@
 function Menu() {
-    return 
+    const items = [
+        'Acerca de','Fotografia comercial','Fotografia artistica','Fotografia estenopeica'
+    ];
+
+
+  return (
     <>
-    <div className="dropdown">
-      <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown button
-      </button>
-      <ul className="dropdown-menu">
-        <li><a className="dropdown-item" href="#">Action</a></li>
-        <li><a className="dropdown-item" href="#">Another action</a></li>
-        <li><a className="dropdown-item" href="#">Something else here</a></li>
-      </ul>
+    <h1>Titulo de la pagina</h1>
+    <div className="list-group">
+        {items.map((item) => (
+        <li key={item} className="list-group-item list-group-item-action">
+            {item}
+        </li>
+        ))}
     </div>
-    </>;
+    </>
+  );
 }
 
 export default Menu;
