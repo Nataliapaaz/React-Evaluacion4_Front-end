@@ -1,13 +1,16 @@
 'use client'
-import React, { useState } from 'react'
-import { Persona } from '../interfaces/iformulario'
-import { registrarPersona } from '../Firebase/promesas'
+import React, { useEffect, useState } from 'react'
+import { Persona } from '../Interfaces/IFormulario'
+import { registrarPersona } from '../Firebase/Promesas'
 
 export const Formulario = () => {
   const [nombre, setNombre] = useState("")
   const [apellido, setApellido] = useState("")
   const [edad, setEdad] = useState("")
   const [errorNombre, setErrorNombre] = useState("")
+
+  
+  
   const registrar = ()=>{
 
     if(nombre.trim()==""){
@@ -16,11 +19,11 @@ export const Formulario = () => {
       setNombre(nombre.trim())
     }
 
-    //Asuminedo que hay  validaciones listas
+    //Asuman que se valido todo
     const p:Persona = {
-      nombre,
-      apellido,
-      edad: parseInt(edad)
+        nombre,
+        apellido,
+        edad:parseInt(edad)
     }
     registrarPersona(p)
     console.log(nombre);

@@ -1,14 +1,33 @@
-'use client'
-import React, { useState } from 'react'
-import { Persona } from '../interfaces/iformulario'
-import { registrarPersona } from '../Firebase/promesas'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { Persona } from '../Interfaces/IFormulario'
+import { actualizarPersona, obtenerPersona, eliminarPersona } from '../Firebase/Promesas';
 
-export const Formulario = () => {
-  const [nombre, setNombre] = useState("")
+export const Actualizar = () => {
+    const params = useParams()
+    const [nombre, setNombre] = useState("")
   const [apellido, setApellido] = useState("")
   const [edad, setEdad] = useState("")
   const [errorNombre, setErrorNombre] = useState("")
-  const registrar = ()=>{
+    const [idPersona,setIdPersona] = useState("")
+  useEffect(()=>{
+    if(params.idPersona!=undefined){
+       obtenerPersona(params.idPersona).then((v)=>{
+        if(v!=undefined && v.idPersona!= undefined){
+            setNombre(v.nombre)
+            setApellido(v.apellido)
+            setEdad(""+v.edad)
+            setIdPersona(v.idPersona)
+        }
+       })
+    
+    }
+    //promesas que recuperan el objeto en base a un id
+    //carguemos en cada estado su valor
+  },[])
+  
+  
+  const actualizar = ()=>{
 
     if(nombre.trim()==""){
       setErrorNombre("No valen espacios en blanco")
@@ -16,13 +35,17 @@ export const Formulario = () => {
       setNombre(nombre.trim())
     }
 
-    //Asuminedo que hay  validaciones listas
+    //Asuman que se valido todo
     const p:Persona = {
-      nombre,
-      apellido,
-      edad: parseInt(edad)
+        nombre,
+        apellido,
+        edad:parseInt(edad)
     }
-    registrarPersona(p)
+    //actualizar
+    actualizarPersona(idPersona,p).then(()=>{
+        alert("Se actualizo con exito")
+    })
+    //registrarPersona(p)
     console.log(nombre);
     console.log(apellido);
     console.log(edad);
@@ -59,7 +82,8 @@ export const Formulario = () => {
           value={edad}
           /><br/>
 
-        <button type='button' onClick={registrar}>Registrar</button>
+        <button type='button' onClick={actualizar}>Actualizar</button>
     </form>
   )
 }
+
