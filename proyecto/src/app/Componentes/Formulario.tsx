@@ -43,26 +43,29 @@ export const Formulario = () => {
 
   }
   return (
-    <form>
-        <label>Nombre: </label><br/>
-        <input type="text" 
+    <div className="container-lg text-center">
+    <form className="mb-3 text-bg-dark  row g-3">
+        <label className="form-label">Nombre: </label><br/>
+        <input type="text" className="form-control"
           onChange={(e)=>validarNombre(e.target.value)}
           value={nombre}
           /><br/>
         <span>{errorNombre}</span><br/>
-        <label>Apellido: </label><br/>
-        <input type="text"
+        <label className="form-label">Apellido: </label><br/>
+        <input type="text" className="form-control"
           onChange={(e)=>setApellido(e.target.value)}
           value={apellido}
         /><br/>
         
-        <label>Edad: </label><br/>
-        <input type="number"
+        <label className="form-label">Edad: </label><br/>
+        <input type="number" className="form-control"
           onChange={(e)=>setEdad(e.target.value)}
           value={edad}
           /><br/>
-
-        <button type='button' onClick={registrar}>Registrar</button>
+        <div className="container-md">
+          <button type='button' className="btn btn-primary" onClick={registrar}>Registrar</button>
+        </div>
     </form>
+    </div>
   )
 }

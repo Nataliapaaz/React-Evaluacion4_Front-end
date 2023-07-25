@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Persona } from '../Interfaces/IFormulario'
-import { actualizarPersona, obtenerPersona, eliminarPersona } from '../Firebase/Promesas';
+import { obtenerPersona, eliminarPersona } from '../Firebase/Promesas';
 
-export const Actualizar = () => {
+export const Eliminar = () => {
     const params = useParams()
     const [nombre, setNombre] = useState("")
   const [apellido, setApellido] = useState("")
@@ -27,7 +27,7 @@ export const Actualizar = () => {
   },[])
   
   
-  const actualizar = ()=>{
+  const eliminar = ()=>{
 
     if(nombre.trim()==""){
       setErrorNombre("No valen espacios en blanco")
@@ -41,49 +41,35 @@ export const Actualizar = () => {
         apellido,
         edad:parseInt(edad)
     }
-    //actualizar
-    actualizarPersona(idPersona,p).then(()=>{
-        alert("Se actualizo con exito")
+    //eliminar
+    eliminarPersona(idPersona).then(()=>{
+        alert("Se elimino con exito")
     })
     //registrarPersona(p)
     console.log(nombre);
     console.log(apellido);
     console.log(edad);
-    alert("Bienvenido "+nombre+" "+apellido);
+    alert("Eliminado:  "+nombre+" "+apellido);
   }
-  const validarNombre = (valor:string)=>{
-    setNombre(valor);
-    if(valor.length<3){
-      setErrorNombre("Debe tener mas de 3 letras")
-    }
-    else{
-      setErrorNombre("")
-    }
 
-
-  }
   return (
     <form>
         <label className="form-label">Nombre: </label><br/>
         <input type="text" className="form-control"
-          onChange={(e)=>validarNombre(e.target.value)}
           value={nombre}
           /><br/>
         <span>{errorNombre}</span><br/>
         <label className="form-label">Apellido: </label><br/>
         <input type="text" className="form-control"
-          onChange={(e)=>setApellido(e.target.value)}
           value={apellido}
         /><br/>
         
         <label className="form-label">Edad: </label><br/>
         <input type="number" className="form-control"
-          onChange={(e)=>setEdad(e.target.value)}
           value={edad}
           /><br/>
 
-        <button type='button' className="btn btn-primary" onClick={actualizar}>Actualizar</button>
+        <button type='button' className="btn btn-primary" onClick={eliminar}>Eliminar</button>
     </form>
   )
 }
-

@@ -17,24 +17,24 @@ export const Registros = () => {
     const renderizarDatos = ()=>{
         var r = personas.map((p)=>{
             return <tr>
-                    <td>{p.nombre}</td>
-                    <td>{p.apellido}</td>
-                    <td>{p.edad}</td>
-                    <td><Link to={"/actualizar/"+p.idPersona}>Actualizar</Link></td>
-                    <td><Link to={"/eliminar/"+p.idPersona}>Eliminar</Link></td>
+                    <td scope="row">{p.nombre}</td>
+                    <td scope="row">{p.apellido}</td>
+                    <td scope="row">{p.edad}</td>
+                    <td><Link to={"/actualizar/"+p.idPersona} className="btn btn-primary">Actualizar</Link></td>
+                    <td><Link to={"/eliminar/"+p.idPersona} className="btn btn-primary">Eliminar</Link></td>
                 </tr>
         })
         return r
     }
 
     return (
-    <table>
+    <table className="table table-striped">
         <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Edad</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
         </tr>
         {
             renderizarDatos()
