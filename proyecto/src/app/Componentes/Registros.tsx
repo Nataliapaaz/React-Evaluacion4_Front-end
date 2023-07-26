@@ -20,6 +20,11 @@ export const Registros = () => {
                     <td scope="row">{p.nombre}</td>
                     <td scope="row">{p.apellido}</td>
                     <td scope="row">{p.edad}</td>
+                    <td scope="row">{p.mail}</td>
+                    <td scope="row">{p.telefono}</td>
+                    <td scope="row">{p.cantidad}</td>
+                    <td scope="row">{p.descrip}</td>
+                    <td scope="row">{p.cliente}</td>
                     <td><Link to={"/actualizar/"+p.idPersona} className="btn btn-primary">Actualizar</Link></td>
                     <td><Link to={"/eliminar/"+p.idPersona} className="btn btn-primary">Eliminar</Link></td>
                 </tr>
@@ -33,6 +38,11 @@ export const Registros = () => {
             <th scope="col">Nombre</th>
             <th scope="col">Apellido</th>
             <th scope="col">Edad</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Cliente</th>
             <th scope="col">Editar</th>
             <th scope="col">Eliminar</th>
         </tr>

@@ -21,6 +21,11 @@ export const obtenerPersonas = async()=>{
             nombre:d.data().nombre,
             apellido:d.data().apellido,
             edad:parseInt(d.data().edad),
+            mail:d.data().mail,
+            telefono:parseInt(d.data().telefono),
+            cantidad:parseInt(d.data().cantidad),
+            descrip:d.data().descrip,
+            cliente:d.data().cliente,
             idPersona:d.id
         } 
         personas.push(p)
@@ -36,6 +41,11 @@ export const obtenerPersona = async(idPersona:string)=>{
             nombre:docSnap.data().nombre,
             apellido:docSnap.data().apellido,
             edad:docSnap.data().edad,
+            mail:docSnap.data().mail,
+            telefono:parseInt(docSnap.data().telefono),
+            cantidad:parseInt(docSnap.data().cantidad),
+            descrip:docSnap.data().descrip,
+            cliente:docSnap.data().cliente,
             idPersona:docSnap.id
         }
         return p

@@ -26,6 +26,7 @@ export const Eliminar = () => {
           setTelefono("" + v.telefono);
           setCantidad("" + v.cantidad);
           setDescrip(v.descrip);
+          setCliente(v.cliente);
           setIdPersona(v.idPersona);
         }
       });
