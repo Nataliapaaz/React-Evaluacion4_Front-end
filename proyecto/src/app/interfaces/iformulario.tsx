@@ -7,5 +7,5 @@ export interface Persona{
     telefono:number,
     cantidad:number,
     descrip:string,
-    cliente:boolean,
+    cliente:string,
 }

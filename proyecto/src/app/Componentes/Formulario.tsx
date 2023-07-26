@@ -52,8 +52,11 @@ export const Formulario = () => {
     }
   };
   return (
+    //Acá generamos el formulario 
     <div className="container-lg text-center">
       <form className="mb-3 text-bg-dark  row g-3">
+
+      {/* N O M B R E */}
         <label className="form-label">Nombre: </label>
         <br />
         <input
@@ -66,6 +69,8 @@ export const Formulario = () => {
         <span>{errorNombre}</span>
         <br />
 
+        {/* A P E L L I D O */}
+
         <label className="form-label">Apellido: </label>
         <br />
         <input
@@ -75,6 +80,8 @@ export const Formulario = () => {
           value={apellido}
         />
         <br />
+
+        {/* E D A D */}
 
         <label className="form-label">Edad: </label>
         <br />
@@ -86,6 +93,8 @@ export const Formulario = () => {
         />
         <br />
 
+        {/* M A I L */}
+
         <label className="form-label">E-mail: </label>
         <br />
         <input
@@ -96,6 +105,8 @@ export const Formulario = () => {
         />
         <br />
 
+        {/* T E L E F O N O */}
+
         <label className="form-label">telefono: </label>
         <br />
         <input
@@ -105,6 +116,8 @@ export const Formulario = () => {
           value={telefono}
         />
         <br />
+
+        {/* C A N T I D A D */}
 
         <label className="form-label">Cantidad de fotos que deseas: </label>
         <br />
@@ -118,6 +131,8 @@ export const Formulario = () => {
         />
         <br />
 
+        {/* D E S C R I P C I O N */}
+
         <label className="form-label">Describe el tipo de sesión que quieres: </label>
         <br />
         <input
@@ -128,19 +143,20 @@ export const Formulario = () => {
         />
         <br />
 
-        <fieldset className="form-check">Eres un cliente drecuente? : </fieldset>
-        <br />
+        {/* C L I E N T E */}
 
+        <label className="form-check">Eres un cliente drecuente? : </label>
+        <br />
 
         <input type="radio" className="form-check-input" id="si" name="cliente"
           onChange={(e) => setCliente(e.target.value)}
           value={cliente}/>
-        <label className="form-check-label" for="si">Si</label>
+        <label className="form-check-label" htmlFor="si">Si</label>
 
         <input type="radio" className="form-check-input" id="no" name="cliente"
           onChange={(e) => setCliente(e.target.value)}
           value={cliente}/>
-        <label className="form-check-label" for="no">No</label>
+        <label className="form-check-label" htmlFor="no">No</label>
         <br />
 
         <div className="container-md">
