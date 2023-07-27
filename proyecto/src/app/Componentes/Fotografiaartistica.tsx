@@ -15,7 +15,7 @@ export const Fotografiaartistica = () => {
         palabras y que forman parte de mi portafolio artístico.
       </p>
       <br />
-      <img src={imgc}></img>
+      <img src={Cielo}></img>
 
     </>
   );

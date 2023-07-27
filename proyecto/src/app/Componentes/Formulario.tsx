@@ -6,19 +6,27 @@ import { registrarPersona } from "../Firebase/Promesas";
 export const Formulario = () => {
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
-  const [edad, setEdad] = useState("");
+  const [edad, setEdad] = useState(0);
   const [errorNombre, setErrorNombre] = useState("");
+  const [errorEdad, setErrorEdad] = useState("");
   const [mail, setMail] = useState("");
   const [telefono, setTelefono] = useState("");
   const [cantidad, setCantidad] = useState("");
   const [descrip, setDescrip] = useState("");
   const [cliente, setCliente] = useState("");
+  const [aprobar, setAprobar] = useState(true);
 
   const registrar = () => {
     if (nombre.trim() == "") {
       setErrorNombre("No valen espacios en blanco");
     } else {
       setNombre(nombre.trim());
+    }
+
+    if (parseInt(edad) <= 0) {
+      setErrorEdad("La edad no puede ser negativa!! Daaaaa");
+    } else {
+      setEdad(edad);
     }
 
     //Asuman que se valido todo
@@ -43,6 +51,7 @@ export const Formulario = () => {
     console.log(cliente);
     alert("Bienvenido " + nombre + " " + apellido);
   };
+  //Validaciones
   const validarNombre = (valor: string) => {
     setNombre(valor);
     if (valor.length < 3) {
@@ -51,6 +60,16 @@ export const Formulario = () => {
       setErrorNombre("");
     }
   };
+
+  const validarEdad = (edad: number) => {
+    setEdad(edad);
+    if (edad <= 0) {
+      setErrorEdad("hhhhhhhh");
+    } else {
+      setErrorEdad("");
+    }
+  };
+
   return (
     //Acá generamos el formulario
     <div className="container-lg text-center">

@@ -109,10 +109,30 @@ export const Eliminar = () => {
 
       {/* C L I E N T E */}
 
-      <label className="form-label">Es un cliente frecuente? : </label>
-      <br />
-      <input type="text" className="form-control" value={cliente} />
-      <br />
+      <label className="form-check">Eres un cliente drecuente? : </label>
+        <br />
+
+        <input
+          type="radio"
+          className="form-check-input"
+          id="si"
+          name="cliente"
+          value={cliente}
+        />
+        <label className="form-check-label" htmlFor="si">
+          Si
+        </label>
+
+        <input
+          type="radio"
+          className="form-check-input"
+          id="no"
+          name="cliente"
+          value={cliente}
+        />
+        <label className="form-check-label" htmlFor="no">
+          No
+        </label>
 
       <button type="button" className="btn btn-primary" onClick={eliminar}>
         Eliminar
