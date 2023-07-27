@@ -27,8 +27,8 @@ export const Formulario = () => {
       apellido,
       edad: parseInt(edad),
       mail,
-      telefono: parseInt(edad),
-      cantidad: parseInt(edad),
+      telefono: parseInt(telefono),
+      cantidad: parseInt(cantidad),
       descrip,
       cliente,
     };
@@ -52,11 +52,10 @@ export const Formulario = () => {
     }
   };
   return (
-    //Acá generamos el formulario 
+    //Acá generamos el formulario
     <div className="container-lg text-center">
       <form className="mb-3 text-bg-dark  row g-3">
-
-      {/* N O M B R E */}
+        {/* N O M B R E */}
         <label className="form-label">Nombre: </label>
         <br />
         <input
@@ -125,7 +124,7 @@ export const Formulario = () => {
           type="number"
           className="form-control"
           min="1"
-          max="400" 
+          max="400"
           onChange={(e) => setCantidad(e.target.value)}
           value={cantidad}
         />
@@ -133,7 +132,9 @@ export const Formulario = () => {
 
         {/* D E S C R I P C I O N */}
 
-        <label className="form-label">Describe el tipo de sesión que quieres: </label>
+        <label className="form-label">
+          Describe el tipo de sesión que quieres:{" "}
+        </label>
         <br />
         <input
           type="textarea"
@@ -148,15 +149,31 @@ export const Formulario = () => {
         <label className="form-check">Eres un cliente drecuente? : </label>
         <br />
 
-        <input type="radio" className="form-check-input" id="si" name="cliente"
+        <input
+          type="radio"
+          className="form-check-input"
+          id="si"
+          name="cliente"
+          checked={cliente === "si"}
           onChange={(e) => setCliente(e.target.value)}
-          value={cliente}/>
-        <label className="form-check-label" htmlFor="si">Si</label>
+          value="Si"
+        />
+        <label className="form-check-label" htmlFor="si">
+          Si
+        </label>
 
-        <input type="radio" className="form-check-input" id="no" name="cliente"
+        <input
+          type="radio"
+          className="form-check-input"
+          id="no"
+          name="cliente"
+          checked={cliente === "no"}
           onChange={(e) => setCliente(e.target.value)}
-          value={cliente}/>
-        <label className="form-check-label" htmlFor="no">No</label>
+          value="no"
+        />
+        <label className="form-check-label" htmlFor="no">
+          No
+        </label>
         <br />
 
         <div className="container-md">
@@ -164,7 +181,7 @@ export const Formulario = () => {
             Registrar
           </button>
         </div>
-        </form>
+      </form>
     </div>
   );
 };

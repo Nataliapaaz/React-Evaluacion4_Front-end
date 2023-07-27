@@ -7,7 +7,7 @@ import {BrowserRouter} from 'react-router-dom'
 import { Header } from './layout/Header'
 import { AppRouter } from './router/AppRouter'
 import { Footer } from './layout/Footer'
-import { Acercade } from './Componentes/AcercaDe'
+import { Acercade } from './Componentes/Acercade'
 import 'bootstrap/dist/css/bootstrap.css';
 export default function Home() {
   return (

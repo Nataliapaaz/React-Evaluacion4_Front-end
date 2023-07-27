@@ -6,9 +6,9 @@ import { Formulario } from '../Componentes/Formulario'
 import { Registros } from '../Componentes/Registros';
 import { Actualizar } from '../Componentes/Actualizar'
 import { Eliminar } from '../Componentes/Eliminar'
-import { Acercade } from '../Componentes/AcercaDe'
+import { Acercade } from '../Componentes/Acercade'
 import { Fotografiacomercial } from '../Componentes/Fotografiacomercial'
-import { Fotografiaartistica } from '../Componentes/fotografiaartistica'
+import { Fotografiaartistica } from '../Componentes/Fotografiaartistica'
 import { Fotografiaestenopeica } from '../Componentes/Fotografiaestenopeica'
 export const AppRouter = () => {
   return (

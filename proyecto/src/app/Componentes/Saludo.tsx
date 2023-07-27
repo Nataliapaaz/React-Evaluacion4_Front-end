@@ -6,6 +6,8 @@ interface Props{
 
 export const Saludo = (props:Props) => {
   return (
-    <div>Saludo {props.nombre} {props.apellido}</div>
+    <div>
+      <h1 className="text-center">Bienvenido</h1>
+    </div>
   )
 }

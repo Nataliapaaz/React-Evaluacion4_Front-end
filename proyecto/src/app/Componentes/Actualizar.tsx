@@ -161,8 +161,9 @@ export const Actualizar = () => {
         className="form-check-input"
         id="si"
         name="cliente"
+        checked={cliente === "si"}
         onChange={(e) => setCliente(e.target.value)}
-        value={cliente}
+        value="si"
       />
       <label className="form-check-label" htmlFor="si">
         Si
@@ -173,8 +174,9 @@ export const Actualizar = () => {
         className="form-check-input"
         id="no"
         name="cliente"
+        checked={cliente === "no"}
         onChange={(e) => setCliente(e.target.value)}
-        value={cliente}
+        value="no"
       />
       <label className="form-check-label" htmlFor="no">
         No

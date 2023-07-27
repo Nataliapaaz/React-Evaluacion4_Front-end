@@ -42,8 +42,8 @@ export const obtenerPersona = async(idPersona:string)=>{
             apellido:docSnap.data().apellido,
             edad:docSnap.data().edad,
             mail:docSnap.data().mail,
-            telefono:parseInt(docSnap.data().telefono),
-            cantidad:parseInt(docSnap.data().cantidad),
+            telefono:docSnap.data().telefono,
+            cantidad:docSnap.data().cantidad,
             descrip:docSnap.data().descrip,
             cliente:docSnap.data().cliente,
             idPersona:docSnap.id

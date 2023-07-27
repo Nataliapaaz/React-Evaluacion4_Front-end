@@ -17,14 +17,14 @@ export const Registros = () => {
     const renderizarDatos = ()=>{
         var r = personas.map((p)=>{
             return <tr>
-                    <td scope="row">{p.nombre}</td>
-                    <td scope="row">{p.apellido}</td>
-                    <td scope="row">{p.edad}</td>
-                    <td scope="row">{p.mail}</td>
-                    <td scope="row">{p.telefono}</td>
-                    <td scope="row">{p.cantidad}</td>
-                    <td scope="row">{p.descrip}</td>
-                    <td scope="row">{p.cliente}</td>
+                    <td>{p.nombre}</td>
+                    <td>{p.apellido}</td>
+                    <td>{p.edad}</td>
+                    <td>{p.mail}</td>
+                    <td>{p.telefono}</td>
+                    <td>{p.cantidad}</td>
+                    <td>{p.descrip}</td>
+                    <td>{p.cliente}</td>
                     <td><Link to={"/actualizar/"+p.idPersona} className="btn btn-primary">Actualizar</Link></td>
                     <td><Link to={"/eliminar/"+p.idPersona} className="btn btn-primary">Eliminar</Link></td>
                 </tr>
@@ -35,16 +35,16 @@ export const Registros = () => {
     return (
     <table className="table table-striped">
         <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Edad</th>
-            <th scope="col">Mail</th>
-            <th scope="col">Telefono</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Descripción</th>
-            <th scope="col">Cliente</th>
-            <th scope="col">Editar</th>
-            <th scope="col">Eliminar</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Mail</th>
+            <th>Telefono</th>
+            <th>Cantidad</th>
+            <th>Descripción</th>
+            <th>Cliente</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
         </tr>
         {
             renderizarDatos()

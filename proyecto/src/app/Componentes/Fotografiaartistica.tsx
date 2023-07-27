@@ -1,4 +1,7 @@
 import React from "react";
+import Cielo from "../Images/Cielo.jpg"
+
+const imgc = require('../Images/Cielo.jpg');
 
 export const Fotografiaartistica = () => {
   return (
@@ -12,6 +15,8 @@ export const Fotografiaartistica = () => {
         palabras y que forman parte de mi portafolio artístico.
       </p>
       <br />
+      <img src={imgc}></img>
+
     </>
   );
 };
