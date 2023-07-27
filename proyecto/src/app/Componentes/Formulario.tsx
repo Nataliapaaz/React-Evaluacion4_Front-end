@@ -6,7 +6,7 @@ import { registrarPersona } from "../Firebase/Promesas";
 export const Formulario = () => {
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
-  const [edad, setEdad] = useState(0);
+  const [edad, setEdad] = useState("");
   const [errorNombre, setErrorNombre] = useState("");
   const [errorEdad, setErrorEdad] = useState("");
   const [mail, setMail] = useState("");
@@ -23,11 +23,6 @@ export const Formulario = () => {
       setNombre(nombre.trim());
     }
 
-    if (parseInt(edad) <= 0) {
-      setErrorEdad("La edad no puede ser negativa!! Daaaaa");
-    } else {
-      setEdad(edad);
-    }
 
     //Asuman que se valido todo
     const p: Persona = {
@@ -61,14 +56,6 @@ export const Formulario = () => {
     }
   };
 
-  const validarEdad = (edad: number) => {
-    setEdad(edad);
-    if (edad <= 0) {
-      setErrorEdad("hhhhhhhh");
-    } else {
-      setErrorEdad("");
-    }
-  };
 
   return (
     //Acá generamos el formulario

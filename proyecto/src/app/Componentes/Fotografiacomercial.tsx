@@ -1,4 +1,5 @@
 import React from "react";
+import Empanadas from "../Images/Empanadas.jpg"
 
 export const Fotografiacomercial = () => {
   return (
@@ -14,6 +15,9 @@ export const Fotografiacomercial = () => {
         puede incluir el retrato, fotografía de alimentos y de matrimonio. Sin
         embargo también hago fotografía de productos y todo tipo de eventos.
       </p>
+      <div className="text-center">
+        <img src={Empanadas.src} width={"800px"}></img>
+      </div>
       <br />
     </>
   );

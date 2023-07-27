@@ -1,4 +1,5 @@
 import React from "react";
+import Pos from "../Images/09pos.jpg"
 
 export const Fotografiaestenopeica = () => {
   return (
@@ -13,6 +14,9 @@ export const Fotografiaestenopeica = () => {
 
   </b>
   </p>
+  <div className="text-center">
+        <img src={Pos.src} width={"800px"}></img>
+    </div>
     </>
   );
 };
